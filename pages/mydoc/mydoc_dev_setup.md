@@ -101,10 +101,11 @@ By default Node JS is invoked to compile our ng2 source everytime the server is 
 
 The GeoRegistry comes preloaded with useful Eclipse launches located at georegistry/launches. Additionally, Geoprism does as well. You can run these launches in Eclipse by right clicking on them and selecting [Run as] -> (the name of the launch).
 
-1. Run [georegistry] patch clean.launch
-2. Run [georegistry] cargo-run-debug.launch
+1. Right click on the cgradapter project. Click Run As -> Maven Install.
+2. In the georegistry project, run [georegistry] patch clean.launch
+3. In the georegistry project, run [georegistry] cargo-run-debug.launch
 
-The patch clean launch will destroy any database that exists (with the same name as configured in your server.properties) and then it will build a new one from scratch.
+The patch clean launch will destroy any database that exists (with the same name as configured in your server.properties) and then it will build a new one from scratch. The cargo-run-debug launch will build the georegistry, load it into tomcat, and then boot tomcat. You will then be able to hit the GeoRegistry in a web browser at https://localhost:8443/georegistry
 
 If you run into this error when running a launch: [Variable references non-existent resource : ${workspace_loc:/geoprism-registry}], then you may need to open the launch file and point it to your geogregistry project.
 
