@@ -76,7 +76,7 @@ entries:
     output: web
     folderitems:
     
-    - title: Developing on Linux
+    - title: Setting up a Development Environment
       url: /mydoc_dev_setup.html
       output: web
 
