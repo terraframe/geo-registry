@@ -1,0 +1,113 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: GeoRegistry
+  version: 1.0
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web
+    folderitems:
+
+    - title: Introduction
+      url: /index.html
+      output: web
+      type: homepage
+
+    - title: About the team behind the GeoRegistry
+      url: /mydoc_about.html
+      output: web
+
+    - title: Get started
+      url: /mydoc_getting_started.html
+      output: web
+
+    #- title: Road Map
+    #  url: /mydoc_future_roadmap.html
+    #  output: web
+
+    # - title: Supported features
+    #   url: /mydoc_supported_features.html
+    #   output: web
+
+    - title: Support
+      url: /mydoc_support.html
+      output: web
+
+  # - title: Release Notes
+  #   output: web
+  #   folderitems:
+  #
+  #   - title: Release notes
+  #     url: /mydoc_release_notes.html
+  #     output: web
+
+    # - title: 5.0 Release notes
+    #   url: /mydoc_release_notes_50.html
+    #   output: web
+
+  - title: Installation
+    output: web
+    folderitems:
+
+    # - title: About Ruby, Gems, Bundler, etc.
+    #   url: /mydoc_about_ruby_gems_etc.html
+    #   output: web
+    
+    - title: Deploying with Ansible (Linux only)
+      url: /mydoc_deploying.html
+      output: web
+
+  - title: Contributing
+    output: web
+    folderitems:
+    
+    - title: Developing on Linux
+      url: /mydoc_dev_setup.html
+      output: web
+
+    #- title: Developing on Mac
+    #  url: /mydoc_dev_geoprism_on_mac.html
+    #  output: web
+
+      #- title: Building GeoRegistry
+      #  url: /mydoc_building_geoprism.html
+      #  output: web
+
+  - title: Data Integration
+    output: web
+    folderitems:
+
+    - title: Spreadsheet Formatting
+      url: /mydoc_formatting_spreadsheets.html
+      output: web
+
+    - title: Spreadsheet Uploading
+      url: /mydoc_uploading_spreadsheets.html
+      output: web
+
+  - title: FAQ
+    output: web
+    folderitems:
+
+    - title: User FAQ
+      url: /mydoc_user_faq.html
+      output: web
+      
+    - title: Developer FAQ
+      url: /mydoc_developer_faq.html
+      output: web
