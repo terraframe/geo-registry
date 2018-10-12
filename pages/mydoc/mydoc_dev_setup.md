@@ -58,12 +58,9 @@ folder: mydoc
 3.  Click "Next".  Follow the wizard, and when asked to select projects to import select the following (at a minimum):
 *  dev
 *  master
-4.  Click to download the repository
+4.  When asked to specify the destination directory, make sure that you check out this project as a sibling on the filesystem to your Geoprism repositroy.
 5.  Select "Import existing projects"
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
-
-TODO : The projects must be sibling projects on the filesystem
-TODO : The dev branch doesn't exist yet
 
 ### 3. Load the GeoRegistry Adapter Into Eclipse
 
