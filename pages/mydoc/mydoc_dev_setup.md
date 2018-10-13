@@ -93,7 +93,7 @@ It is not required to install Oracle Java into your Eclipse, however it is recom
 ```
 
 {:start="2"}
-2. By default our patcher script will use these root credentials to create a database and user by name 'georegistry' which the georegistry will use. If you want to change this you can by modifying `georegistry-server/src/main/resources/runwaysdk/server.properties`. You can also modify the database port here.
+2. By default the GeoPrism patcher script will use these root credentials to create a database and user by name 'georegistry' which the georegistry will use. If you want to change this you can by modifying `georegistry-server/src/main/resources/runwaysdk/server.properties`. You can also modify the database port here.
 
 
 ## Install NodeJS
