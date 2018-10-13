@@ -61,6 +61,7 @@ It is not required to install Oracle Java into your Eclipse, however it is recom
 *  dev
 *  master
 4.  When asked to specify the destination directory, make sure that you check out this project as a sibling on the filesystem to your Geoprism repositroy.
+    TODO: What does this mean?
 5.  Select "Import existing projects"
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 
