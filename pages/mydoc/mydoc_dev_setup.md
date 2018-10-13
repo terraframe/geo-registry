@@ -99,6 +99,7 @@ It is not required to install Oracle Java into your Eclipse, however it is recom
 ## Install NodeJS
 
 By default Node JS is invoked to compile our ng2 source everytime the server is booted. In order to get this working you will need to install Node JS, refer to their official documentation. Additionally, the npm executable is invoked directly from Eclipse, which means it must be on the classpath of Eclipse's execution environment. 
+    TODO: How do you do this?
 
 
 ## Run The Build Tools
