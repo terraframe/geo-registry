@@ -50,7 +50,7 @@ The Geoprism Registry currently only supports PostgreSQL 9.6.
 5.  Select "Import existing projects"
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 
-### 3. Set your GeoPrism repo to the runway-v2 branch 
+### 2. Set your GeoPrism repo to the runway-v2 branch 
 
 If you followed step 1 above you should have imported GeoPrism with your Git repo pointing to the runway-v2 branch.  If not you will need to make sure you change to that branch. 
 
@@ -91,7 +91,7 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 
 ### 5. Configure the GeoRegistry
-1. The root database credentials are set in the georegistry-server/pom.xml. If you aren't using postgres/postgres, change it now.
+1. The root database credentials are set in the georegistry-server/pom.xml. If you aren't using the default PostgreSQL configuration (postgres/postgres), you'll need to change the georegistry-server/pom.xml to have the appropriate credentials to access your database environment.
 
 ```
     <root.db>postgres</root.db>
@@ -99,8 +99,10 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
     <root.pass>postgres</root.pass>
 ```
 
+By default the GeoPrism patcher script will use these root credentials to create a database and user by name 'georegistry' which the georegistry will use. 
+
 {:start="2"}
-2. By default the GeoPrism patcher script will use these root credentials to create a database and user by name 'georegistry' which the georegistry will use. If you want to change this you can by modifying `georegistry-server/src/main/resources/runwaysdk/server.properties`. You can also modify the database port here.
+2. The `georegistry-server/src/main/resources/runwaysdk/server.properties` file contains config info about the environment. An important consideration is the database configuration details. Make sure to verify that this file is configured to access your PostgreSQL installation. Don't forget to check the port setting.
 
 
 ## Install NodeJS
