@@ -68,7 +68,6 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 *  dev
 *  master
 4.  When asked to specify the destination directory, make sure that you check out this project as a sibling on the filesystem to your Geoprism repositroy.
-    TODO: What does this mean?
 5.  Click "Next".
 6.  Select "Import existing projects"
 7.  Click "Next".
@@ -108,7 +107,6 @@ By default the GeoPrism patcher script will use these root credentials to create
 ## Install NodeJS
 
 By default Node JS is invoked to compile our ng2 source everytime the server is booted. In order to get this working you will need to install Node JS, refer to their official documentation. Additionally, the npm executable is invoked directly from Eclipse, which means it must be on the classpath of Eclipse's execution environment. 
-    TODO: How do you do this?
 
 
 ## Run The Build Tools
