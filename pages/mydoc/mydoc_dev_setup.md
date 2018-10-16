@@ -50,7 +50,13 @@ The Geoprism Registry currently only supports PostgreSQL 9.6.
 5.  Select "Import existing projects"
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 
-### 2. Load the GeoRegistry Into Eclipse
+### 3. Set your GeoPrism repo to the runway-v2 branch 
+
+If you followed step 1 above you should have imported GeoPrism with your Git repo pointing to the runway-v2 branch.  If not you will need to make sure you change to that branch. 
+
+1.  git checkout runway-vt
+
+### 3. Load the GeoRegistry Into Eclipse
 
 1.  In Eclipse go to 'File -> Import -> Git -> Projects From Git -> Clone URI'.
 2.  Set:
@@ -69,7 +75,7 @@ The Geoprism Registry currently only supports PostgreSQL 9.6.
 8.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 9.  Click "Finish".
 
-### 3. Load the GeoRegistry Adapter Into Eclipse
+### 4. Load the GeoRegistry Adapter Into Eclipse
 
 1.  In Eclipse go to 'File -> Import -> Git -> Projects From Git -> Clone URI'.
 2.  Set:
@@ -84,7 +90,7 @@ The Geoprism Registry currently only supports PostgreSQL 9.6.
 5.  Select "Import existing projects"
 6.  Select all of the projects to import and make sure that "Search for nested projects" is checked.
 
-### 4. Configure the GeoRegistry
+### 5. Configure the GeoRegistry
 1. The root database credentials are set in the georegistry-server/pom.xml. If you aren't using postgres/postgres, change it now.
 
 ```
