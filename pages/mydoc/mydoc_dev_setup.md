@@ -30,9 +30,9 @@ Go to the Eclipse downloads website and install Eclipse Enterprise Edition. Most
 It is not required to install Oracle Java into your Eclipse, however it is recommended because the GeoRegistry is tested with Oracle java and is not guaranteed to work with the Open JDK. Additionally, Oracle java is faster than the open source competitors. Therefore, we recommend installing Oracle Java 8 and configuring your Eclipse to use it.
 
 ## Install The Database Software
-The Geoprism Registry currently only supports PostgreSQL 9.6.
+The Geoprism Registry currently only supports PostgreSQL 9.5 or 9.6.
 
-1. Install PostgreSQL 9.6 using whatever method you prefer.
+1. Install PostgreSQL 9.5 or 9.6 using whatever method you prefer.
 2. Install PostGIS 2.2+ into your PostgreSQL. 
 
 ## Download and Load the GeoRegistry Into Eclipse
