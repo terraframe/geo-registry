@@ -40,4 +40,7 @@ TODO : Specifying your own project.json file
 5. The geoprism-cloud ansible directory contains configurations for deploying many different geoprism apps, however the one we care about is georegistry.yml. Here's what a deployment command looks like: `ansible-playbook -i ./inventory/your_server_name.ini georegistry.yml`. Execute this command from the geoprism-cloud/ansible directory on your development machine or CI server (not the production server itself).
 
 
+# Patching
+Changes to the schema are managed through the metadata defined in the XML files in th src/main/resources/domain directory. When the patcher is run, the metadata version of the current schema is checked against the versioned metadata files in that directory. The subsequent XML files are imported which will define any new datatypes in the metadata and generate the corresponding database schemas.
+
 {% include links.html %}
