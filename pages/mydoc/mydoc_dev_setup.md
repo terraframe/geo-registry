@@ -67,7 +67,10 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 3.  Click "Next".  Follow the wizard, and when asked to select projects to import select the following:
 *  dev
 *  master
-4.  When asked to specify the destination directory, make sure that you check out this project as a sibling on the filesystem to your Geoprism repositroy.
+4.  When asked to specify the destination directory, make sure that you check out this project as a sibling on the filesystem to your Geoprism repositroy. Additionally, make sure the directory is named 'georegistry'. Here is an example:
+* Geoprism is located at: /Users/richard/git/geoprism
+* Georegistry destination: /Users/richard/git/georegistry
+* Naming your directory 'georegistry' will help our launches to work out of the box.
 5.  Click "Next".
 6.  Select "Import existing projects"
 7.  Click "Next".
@@ -101,25 +104,35 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 By default the GeoPrism patcher script will use these root credentials to create a database and user by name 'georegistry' which the georegistry will use. 
 
 {:start="2"}
-2. The `georegistry-server/src/main/resources/runwaysdk/server.properties` file contains config info about the environment. An important consideration is the database configuration details. Make sure to verify that this file is configured to access your PostgreSQL installation. Don't forget to check the port setting.
+2. The configuration files for the georegistry are located at 'georegistry/envcfg'. Open this directory, and inside it create a file called 'envcfg.properties'. Paste the following contents into the file:
+
+```
+    # The application will use the properties files in the sibling directory with this name.
+    appcfg=dev
+
+    # Any override properties specific to the current development environment go here (like database.port)
+    database.port=5432
+```
+
+If you need to override any properties for your specific environment, do so here. The 'appcfg' property tells the build environment to use the 'dev' application configuration set, which is located inside this 'envcfg' directory. Inside 'envcfg/dev/runwaysdk/server.properties' you will see the key 'database.port'. You can see that we are overriding the 'database.port' in our 'envcfg.properties'. Within these files you will find the default values for lots of properties, and you may override them in 'envcfg.properties' as needed. You will also notice that this file is automatically ignored by git, and you should never commit it.
 
 
 ## Install NodeJS
 
-By default Node JS is invoked to compile our ng2 source everytime the server is booted. In order to get this working you will need to install Node JS, refer to their official documentation. Additionally, the npm executable is invoked directly from Eclipse, which means it must be on the classpath of Eclipse's execution environment. 
+This step is optional, and only required for Angular front-end developers. If you are a front-end developer and intend to do angular development, you may install Node JS at this time, refer to their official documentation.
 
 
 ## Run The Build Tools
 
-The GeoRegistry comes preloaded with useful Eclipse launches located at georegistry/launches. Additionally, Geoprism does as well. You can run these launches in Eclipse by right clicking on them and selecting [Run as] -> (the name of the launch).
+The GeoRegistry comes preloaded with useful Eclipse launches located at georegistry/launches. You can run these launches in Eclipse by right clicking on them and selecting [Run as] -> (the name of the launch).
 
 1. Right click on the cgradapter project. Click Run As -> Maven Install.
 2. In the georegistry project, run [georegistry] patch clean.launch
-3. In the georegistry project, run [georegistry] cargo-run-debug.launch
+3. In the georegistry project, run [georegistry] cargo-run.launch
 
-The patch clean launch will destroy any database that exists (with the same name as configured in your server.properties) and then it will build a new one from scratch. The cargo-run-debug launch will build the georegistry, load it into tomcat, and then boot tomcat. You will then be able to hit the GeoRegistry in a web browser at https://localhost:8443/georegistry
+The patch clean launch will destroy any database that exists (with the same name as configured by the 'database.name' property) and then it will build a new one from scratch. The cargo-run launch will build the georegistry, load it into tomcat, and then boot tomcat. You will then be able to hit the GeoRegistry in a web browser at https://localhost:8443/georegistry
 
-If you run into this error when running a launch: [Variable references non-existent resource : ${workspace_loc:/geoprism-registry}], then you may need to open the launch file and point it to your geogregistry project.
+If you run into this error when running a launch: [Variable references non-existent resource : ${workspace_loc:/geoprism-registry}], then you may need to open the launch file and point it to your geogregistry project. This also means that you checked out the georegistry project incorrectly as per step 3.4.
 
 
 {% include links.html %}
