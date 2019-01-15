@@ -41,7 +41,7 @@ The Geoprism Registry currently only supports PostgreSQL 9.5 or 9.6.
 
 1.  In Eclipse go to 'File -> Import -> Git -> Projects From Git -> Clone URI'.
 2.  Set:
-*  URI : git@github.com:terraframe/geoprism.git
+*  URI : https://github.com:terraframe/geoprism.git
 *  Host : github.com
 *  Repository path : terraframe/geoprism.git
 *  User : git
@@ -60,7 +60,7 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 
 1.  In Eclipse go to 'File -> Import -> Git -> Projects From Git -> Clone URI'.
 2.  Set:
-*  URI : git@github.com:terraframe/geoprism-registry.git
+*  URI : https://github.com:terraframe/geoprism-registry.git
 *  Host : github.com
 *  Repository path : terraframe/geoprism-registry.git
 *  User : git
@@ -81,7 +81,7 @@ If you followed step 1 above you should have imported GeoPrism with your Git rep
 
 1.  In Eclipse go to 'File -> Import -> Git -> Projects From Git -> Clone URI'.
 2.  Set:
-*  URI : git@github.com:terraframe/common-geo-registry-adapter.git
+*  URI : https://github.com:terraframe/common-geo-registry-adapter.git
 *  Host : github.com
 *  Repository path : terraframe/common-geo-registry-adapter.git
 *  User : git
