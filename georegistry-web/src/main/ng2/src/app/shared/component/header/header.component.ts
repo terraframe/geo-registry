@@ -39,8 +39,8 @@ export class CgrHeaderComponent {
     }
 
     logout(): void {
-        
-        window.location.href = acp + '/session/logout';
+                
+        this.sessionService.logout();
         
 //        this.sessionService.logout().then( response => {
 //            this.router.navigate( ['/login'] );

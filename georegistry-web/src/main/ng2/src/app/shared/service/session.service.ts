@@ -56,25 +56,28 @@ export class SessionService {
             } )
     }
 
-    logout(): Promise<void> {
+    logout(): void {
+        this.authService.setUser( null );
 
-        let headers = new HttpHeaders( {
-            'Content-Type': 'application/json'
-        } );
-
-        this.service.start();
-
-
-        return this.http
-            .post<void>( acp + '/session/logout', { headers: headers } )
-            .finally(() => {
-                this.service.complete();
-            } )
-            .toPromise()
-            .then(( response: any ) => {
-                this.authService.setUser( null );
-
-                return response;
-            } )
+        window.location.href = acp + '/session/logout';
+//
+//        let headers = new HttpHeaders( {
+//            'Content-Type': 'application/json'
+//        } );
+//
+//        this.service.start();
+//
+//
+//        return this.http
+//            .post<void>( acp + '/session/logout', { headers: headers } )
+//            .finally(() => {
+//                this.service.complete();
+//            } )
+//            .toPromise()
+//            .then(( response: any ) => {
+//                this.authService.setUser( null );
+//
+//                return response;
+//            } )
     }
 }
