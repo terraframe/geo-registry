@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "The first implementation of the Common Geo-Registry (CGR). The CGR is a long term vision of Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other Digital Solutions For Malaria Elimination (DSME) community partners."
+description: "The first implementation of the Common Geo-Registry (CGR). The CGR is a long term vision of the Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other Digital Solutions For Malaria Elimination (DSME) community partners."
 permalink: /
 ---
 
