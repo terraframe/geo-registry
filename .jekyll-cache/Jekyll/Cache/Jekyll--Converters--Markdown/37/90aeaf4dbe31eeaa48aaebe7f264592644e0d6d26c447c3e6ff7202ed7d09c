@@ -1,0 +1,50 @@
+I"	<h1 class="fs-9" id="geoprism-registry">GeoPrism Registry</h1>
+
+<p class="fs-6 fw-300">The first implementation of the Common Geo-Registry (CGR).</p>
+
+<p><a href="#documentation" class="btn btn-primary fs-5 mb-4 mb-md-0 mr-2">Documentation</a> <a href="https://github.com/terraframe/geoprism-registry" class="btn fs-5 mb-4 mb-md-0">View it on GitHub</a></p>
+
+<hr />
+
+<h2 id="documentation">Documentation</h2>
+
+<ul>
+  <li><a href="https://terraframe.atlassian.net/wiki/spaces/GGR/pages/901808172/User+Documentation">User Documentation</a></li>
+  <li><a href="https://terraframe.atlassian.net/wiki/spaces/GGR/pages/901873771/Implementor+Documentation">Implementation Documentation</a></li>
+  <li><a href="https://terraframe.github.io/common-geo-registry-specification-rest-api-documentation/">API Documentation</a></li>
+  <li><a href="https://github.com/terraframe/common-geo-registry-specification">Specification</a></li>
+</ul>
+
+<hr />
+
+<h2 id="about">About</h2>
+
+<p>The GeoPrism Registry is the first implementation of the <a href="https://github.com/terraframe/common-geo-registry-specification">Common Geo-Registry (CGR) Specification</a>. The CGR is a long term vision of Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other Digital Solutions For Malaria Elimination (DSME) community partners.</p>
+
+<hr />
+
+<h2 id="vision">Vision</h2>
+
+<hr />
+
+<h3 id="license">License</h3>
+
+<p>GeoPrism Registry is open sourced under the <a href="https://github.com/terraframe/geoprism-registry/blob/master/LICENSE">GNU Lesser General Public License</a>.</p>
+
+<h3 id="contributing">Contributing</h3>
+
+<ul>
+  <li>To get involved in the community please contact <strong>__</strong><strong>__ at __</strong><strong>__</strong><em>__</em>.</li>
+  <li>For code contributions please see the <a href="https://github.com/terraframe/geoprism-registry/blob/master/contributing.md">contributing section in the GitHub repo</a>.</li>
+</ul>
+
+<h4 id="thank-you-for-your-interest-in-getting-involved">Thank you for your interest in getting involved</h4>
+
+<ul class="list-style-none">
+
+</ul>
+
+<h3 id="code-of-conduct">Code of Conduct</h3>
+
+<p><a href="https://github.com/terraframe/geoprism-registry/blob/master/code-of-conduct.md">View our Code of Conduct</a> on our GitHub repository.</p>
+:ET

@@ -1,0 +1,54 @@
+I"X<h1 class="no_toc" id="geoprism-registry-roadmap">GeoPrism Registry Roadmap</h1>
+
+<p class="fs-6 fw-300">The GeoPrism Registry is designed and built by a community of partners. The roadmap is defined by a collective and evolving aggregation of input based on the needs of communities across countries. This roadmap is subject to change as it strive to outline the high level objectives as the need is better understood by the community over time.</p>
+
+<h2 class="no_toc text-delta" id="table-of-contents">Table of contents</h2>
+
+<ol id="markdown-toc">
+  <li><a href="#about" id="markdown-toc-about">About</a></li>
+  <li><a href="#roadmap" id="markdown-toc-roadmap">Roadmap</a></li>
+</ol>
+
+<hr />
+
+<h2 id="about">About</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The roadmap ...
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="roadmap">Roadmap</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Assign users to contributor, maintainer, or administrative roles within organizations.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Assign users to cross organization administrative roles.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Register and maintain organizations to support restricted data sharing within organizations as well as cross organization sharing.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create and manage Geo-Object Types which define how data should be structured in the system.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Create and manage hierarchies which are composed of Geo-Object Types.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Integrate and store data through time.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Upload spreadsheets.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Upload shapefiles.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Manage Geo-Object position in hierarchies (e.g. parent / child relationships).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Assign data to be public or private (shared within an organization).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Publish data as lists.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Explore data through time on maps.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Submit data changes to a curation process.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Monitor and authorize changes submitted.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Access and manage tasks needing attention (e.g. a Geo-Object that needs to be assigned to a parent).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Access and manage system data from external application through API access.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Combine hierarchies to maximize data sharing and reduce duplication.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" checked="checked" />Push data to external DHIS2 or Reveal systems.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />DHIS2 plugin integration.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />DHIS2 Oauth integration.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Set end dates for data integrated and stored over time.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Specify (when uploading a shapefile) whether to import attributes only, geometry only, or both.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Assign data (Geo-Objects, Geo-Object Types, Geo-Object Type attributes, hierarchies, and geometries) to be restricted which adds an additional privacy setting on top of public and private.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Public or private privileges on Geo-Object Types.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Improve time validity functionality for data integration procedures.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Ability to assign Geo-Objects to grand parents.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Ability to split a Geo-Object.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Enhanced ability to edit geometry data for Geo-Objects.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Enhanced ability to link Geo-Objects to derivative artifacts (lists, maps, etc…).</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Enhanced ability to visualize and manage data on a hierarchy graph.</li>
+</ul>
+:ET

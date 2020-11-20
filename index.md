@@ -1,70 +1,63 @@
 ---
-title: Introduction to the GeoRegistry
-keywords: homepage
-tags: [introduction]
-sidebar: mydoc_sidebar
-permalink: index.html
-summary: The GeoRegistry is a formal management system for ontologically-enabled geospatial data.
+layout: default
+title: Home
+nav_order: 1
+description: "The first implementation of the Common Geo-Registry (CGR). The CGR is a long term vision of Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other Digital Solutions For Malaria Elimination (DSME) community partners."
+permalink: /
 ---
 
+# GeoPrism Registry
+{: .fs-9 }
 
-## Overview
+The first implementation of the Common Geo-Registry (CGR).
+{: .fs-6 .fw-300 }
 
-The GeoRegistry is a formal management system for ontologically-enabled geospatial data.
+[Documentation](#documentation){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View it on GitHub](https://github.com/terraframe/geoprism-registry){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-## An Ontological Approach to GIS Development
+---
 
-By utilizing an ontological approach to software development the GeoRegistry enables the utilization of almost any data set even if no geometries exist for data points. This is one of the great strengths of the GeoRegistry as it allows for analysing and visualizing data in a geographic context even when geometry information is lacking. Additionally, ontologies and geo-ontologies allow for navigating relationship hierarchies (including spatial) where such relationships would typically be computationally derived from geometric relationships or manually assigned by an individual.
+## Documentation
 
-## Important Concepts of the GeoRegistry
+- [User Documentation](https://terraframe.atlassian.net/wiki/spaces/GGR/pages/901808172/User+Documentation)
+- [Implementation Documentation](https://terraframe.atlassian.net/wiki/spaces/GGR/pages/901873771/Implementor+Documentation)
+- [API Documentation](https://georegistry-api-docs.geoprism.net/)
+- [Specification](https://github.com/terraframe/common-geo-registry-specification)
 
-In GeoDashboard a Universal represents a feature set type to which data points can be related (EX: Countries, States, or Cities). A GeoEntity represents the actual geographic feature for a Universal (EX: USA, Colorado, or Denver). In essence, a Universal defines a geographic heirarchy to which GeoEntities are assigned. Relationships are then defined between data injested into the system and one or more GeoNodes which in turn have a relationship to one or more Universals.
 
-## Visualization Features Overview
+---
 
-* Some of the more prominent features of this theme include the following:
-* Dynamically map and style layers based on data attributes.
-* Dynamically aggregate layers by spatial boundaries.
-* Enable/disable reference boundary layers for gegraphic context and cartography.
-* Filter data by date, text, ontology term, number, and/or location.
-* Save data filters for a map or dashboard.
-* Add custom BIRT charts and graphs that update based on layer feature click.
-* Export maps to .png file format.
-* Create and clone new dashboards.
-* Switch between different saved dashboards and maps.
+## About
 
-## Data Management Features Overview
+The GeoPrism Registry is the first implementation of the [Common Geo-Registry (CGR) Specification](https://github.com/terraframe/common-geo-registry-specification). The CGR is a long term vision of Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other [Digital Solutions For Malaria Elimination (DSME)](http://dsme.community/) community partners.
 
-* Visualize Universal relationship heirarchy.
-* Edit Universals and Universal relationship heirarchy.
-* Create Universal subtypes.
-* Export Universal definitions.
-* Visualize GeoEntity relationship heirarchy.
-* Edit GeoEntities (including their geometry) and GeoEntity relationship heirarchy.
-* Create GeoEntity synonyms.
-* Export GeoEntity definitions.
-* Identify system detected GeoEntity data issues.
-* Fix system identified GeoEntity data issues.
-* Edit ontology term and term heirarchy.
-* Export ontology term definitions.
-* Visualize data in a tabular form.
-* Create and edit scheduled data upload jobs.
-* View scheduled data upload job execution history.
+Development for the GeoPrism Registry began as one of the [DSME common goods](https://dsme.community/common-geo-registry/) which collectively strive to eliminate Malaria.
 
-## System Administration Features Overview
+---
 
-* Create and administer new users to the system.
-* Assign users to system roles.
-* Assign users privileges to dashboards.
+## Vision of the Common Geo-Registry (CGR)
+The Common Geo-Registry (CGR), is an IT solution that provides a single source of truth for the standardization, management and use of geographic data over time. The CGR is used to store, manage and share information that is official and non-official and both current and historic in relation to geographic objects (Geo-Objects) key to the sustainable development of administrative divisions, villages, infrastructure and other relevant physical and virtual features in an environment. This information is stored as lists, hierarchies and geospatial data accessible by any information system or user with granted access rights.
 
-## Developer Features Overview
+---
 
-* Metadata driven development environment.
-* Integrated Object Relational Mapping (ORM).
-* Full localization support.
+### License
 
-## Getting started
+GeoPrism Registry is open sourced under the [GNU Lesser General Public License](https://github.com/terraframe/geoprism-registry/blob/master/LICENSE).
 
-To get started, see [Getting Started][index].
+### Contributing
 
-{% include links.html %}
+- To get involved in the community please contact us at info@terraframe.com.
+- For code contributions please see the [contributing section in the GitHub repo](https://github.com/terraframe/geoprism-registry/blob/master/contributing.md).
+
+#### Thank you for your interest in getting involved
+
+<ul class="list-style-none">
+{% for contributor in site.github.contributors %}
+  <li class="d-inline-block mr-1">
+     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
+  </li>
+{% endfor %}
+</ul>
+
+### Code of Conduct
+
+[View our Code of Conduct](https://github.com/terraframe/geoprism-registry/blob/master/code-of-conduct.md) on our GitHub repository.

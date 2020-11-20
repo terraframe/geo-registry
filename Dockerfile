@@ -1,26 +1,13 @@
-FROM ruby:2.1
-MAINTAINER mrafayaleem@gmail.com
+FROM ruby:2.6
 
-RUN apt-get clean \
-  && mv /var/lib/apt/lists /var/lib/apt/lists.broke \
-  && mkdir -p /var/lib/apt/lists/partial
+ENV LC_ALL C.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
-RUN apt-get update
+WORKDIR /usr/src/app
 
-RUN apt-get install -y \
-    node \
-    python-pygments \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/
+COPY Gemfile just-the-docs.gemspec ./
+RUN gem install bundler && bundle install
 
-WORKDIR /tmp
-ADD Gemfile /tmp/
-ADD Gemfile.lock /tmp/
-RUN bundle install
-
-VOLUME /src
 EXPOSE 4000
-
-WORKDIR /src
-ENTRYPOINT ["jekyll"]
 
