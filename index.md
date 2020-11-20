@@ -48,15 +48,6 @@ GeoPrism Registry is open sourced under the [GNU Lesser General Public License](
 - To get involved in the community please contact us at info@terraframe.com.
 - For code contributions please see the [contributing section in the GitHub repo](https://github.com/terraframe/geoprism-registry/blob/master/contributing.md).
 
-#### Thank you for your interest in getting involved
-
-<ul class="list-style-none">
-{% for contributor in site.github.contributors %}
-  <li class="d-inline-block mr-1">
-     <a href="{{ contributor.html_url }}"><img src="{{ contributor.avatar_url }}" width="32" height="32" alt="{{ contributor.login }}"/></a>
-  </li>
-{% endfor %}
-</ul>
 
 ### Code of Conduct
 
