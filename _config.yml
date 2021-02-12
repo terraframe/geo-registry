@@ -13,12 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-theme: just-the-docs
-
 title: GeoPrism Registry
-description: The first implementation of the Common Geo-Registry (CGR). The CGR is a long term vision of Health GeoLab Collaborative and developed in partnership with Clinton Health Access Initiative, Vital Wave, and other Digital Solutions For Malaria Elimination (DSME) community partners.
+description: The first implementation of the Common Geo-Registry (CGR).
 baseurl: "/geoprism-registry" # the subpath of your site, e.g. /blog
-url: "https://terraframe.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://terraframe.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+#url: "http://localhost:4000"
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"
@@ -83,7 +82,7 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "The GeoPrism Registry code and documentation is developed and maintained by <a href=\"https://terraframe.com/\">TerraFrame.</a>"
+footer_content: ""
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
@@ -92,7 +91,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 
 
 # Footer "Edit this page on GitHub" link text
-gh_edit_link: true # show or hide edit this page link
+gh_edit_link: false # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
 gh_edit_repository: "https://github.com/pmarsceill/just-the-docs" # the github URL for your repo
 gh_edit_branch: "master" # the branch that your docs is served from
@@ -104,7 +103,7 @@ color_scheme: nil
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-ga_tracking: UA-2709176-10
+ga_tracking: G-3DVGL8CT39
 ga_tracking_anonymize_ip: true # Use GDPR compliant Google Analytics settings (true/nil by default)
 
 plugins:

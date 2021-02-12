@@ -23,7 +23,6 @@ The first implementation of the Common Geo-Registry (CGR).
 - [API Documentation](https://georegistry-api-docs.geoprism.net/)
 - [Specification](https://github.com/terraframe/common-geo-registry-specification)
 
-
 ---
 
 ## About
