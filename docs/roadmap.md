@@ -33,3 +33,4 @@ The roadmap outlines the key functionality that has been determined to be import
 - Add public data sharing (no login required)
 - Improve curation algorithms
 - Enhance management of Change Requests
+- Add support for CSV imports
