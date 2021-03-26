@@ -29,5 +29,7 @@ The roadmap outlines the key functionality that has been determined to be import
 
 
 ## Roadmap
-- Public data sharing
-- Improved curation algorithms
+- Add support for [HL7 FHIR](https://www.hl7.org/fhir/overview.html) formats
+- Add public data sharing (no login required)
+- Improve curation algorithms
+- Enhance management of Change Requests
