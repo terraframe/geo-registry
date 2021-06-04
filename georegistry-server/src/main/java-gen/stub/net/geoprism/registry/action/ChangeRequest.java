@@ -285,9 +285,9 @@ public class ChangeRequest extends ChangeRequestBase implements GovernancePermis
     return this.getOwnerId().equals(Session.getCurrentSession().getUser().getOid());
   }
   
-  public String getOrganization()
+  public String getOrganizationCode()
   {
-    String gotCode = this.getGeoObjectType();
+    String gotCode = this.getGeoObjectTypeCode();
     
     Optional<ServerGeoObjectType> optional = ServiceFactory.getMetadataCache().getGeoObjectType(gotCode);
     
@@ -308,13 +308,13 @@ public class ChangeRequest extends ChangeRequestBase implements GovernancePermis
     return this.getApprovalStatus().get(0);
   }
   
-  public String getGeoObjectType()
+  public String getGeoObjectTypeCode()
   {
     List<AbstractAction> actions = this.getOrderedActions();
     
     for (AbstractAction action : actions)
     {
-      return action.getGeoObjectType();
+      return action.getGeoObjectTypeCode();
     }
     
     return null;

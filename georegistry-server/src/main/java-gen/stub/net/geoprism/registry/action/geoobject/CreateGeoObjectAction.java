@@ -83,7 +83,7 @@ public class CreateGeoObjectAction extends CreateGeoObjectActionBase
   }
   
   @Override
-  public String getGeoObjectType()
+  public String getGeoObjectTypeCode()
   {
     String sJson = this.getGeoObjectJson();
     

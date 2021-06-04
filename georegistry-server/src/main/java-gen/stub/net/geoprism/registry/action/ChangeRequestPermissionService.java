@@ -38,8 +38,8 @@ public class ChangeRequestPermissionService
   {
     final RolePermissionService perms = ServiceFactory.getRolePermissionService();
 
-    final String orgCode = cr.getOrganization();
-    final String gotCode = cr.getGeoObjectType();
+    final String orgCode = cr.getOrganizationCode();
+    final String gotCode = cr.getGeoObjectTypeCode();
     ServerGeoObjectType type = null;
 
     if (gotCode != null)

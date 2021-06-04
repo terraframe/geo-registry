@@ -25,7 +25,6 @@ import java.util.Set;
 
 import org.commongeoregistry.adapter.Optional;
 import org.commongeoregistry.adapter.constants.GeometryType;
-import org.commongeoregistry.adapter.dataaccess.GeoObjectOverTimeJsonAdapters;
 import org.commongeoregistry.adapter.dataaccess.LocalizedValue;
 import org.commongeoregistry.adapter.metadata.GeoObjectType;
 
@@ -43,10 +42,7 @@ import com.runwaysdk.system.Users;
 
 import net.geoprism.registry.action.ChangeRequestPermissionService.ChangeRequestPermissionAction;
 import net.geoprism.registry.action.geoobject.CreateGeoObjectAction;
-import net.geoprism.registry.action.geoobject.SetParentAction;
-import net.geoprism.registry.action.geoobject.UpdateGeoObjectAction;
-import net.geoprism.registry.action.tree.AddChildAction;
-import net.geoprism.registry.action.tree.RemoveChildAction;
+import net.geoprism.registry.action.geoobject.GeoObjectAction;
 import net.geoprism.registry.io.GeoObjectImportConfiguration;
 import net.geoprism.registry.service.ChangeRequestService;
 import net.geoprism.registry.service.ServiceFactory;
@@ -112,15 +108,15 @@ public class ActionJsonAdapters
     }
   }
   
-  abstract public static class GeoObjectActionSerializer extends AbstractActionSerializer
+  abstract public static class AbstractGeoObjectActionSerializer extends AbstractActionSerializer
   {
-    abstract JsonObject getGeoObjectJson(AbstractAction action);
-  
-    public JsonElement serialize(AbstractAction action, Type typeOfSrc, JsonSerializationContext context)
+    public JsonElement serialize(GeoObjectAction action, Type typeOfSrc, JsonSerializationContext context)
     {
       JsonObject jo = super.serialize(action, typeOfSrc, context).getAsJsonObject();
       
-      jo.add(CreateGeoObjectAction.GEOOBJECTJSON, this.getGeoObjectJson(action));
+      jo.addProperty(GeoObjectAction.GEOOBJECTCODE, action.getGeoObjectCode());
+      jo.addProperty(GeoObjectAction.GEOOBJECTTYPECODE, action.getGeoObjectTypeCode());
+      jo.addProperty(GeoObjectAction.ORGANIZATIONCODE, action.getOrganizationCode());
       
       this.addGeoObjectType(action, jo);
       
@@ -129,9 +125,7 @@ public class ActionJsonAdapters
     
     private void addGeoObjectType(AbstractAction action, JsonObject object)
     {
-      JsonObject json = this.getGeoObjectJson(action);
-      
-      String typeCode = GeoObjectOverTimeJsonAdapters.GeoObjectDeserializer.getTypeCode(json.toString());
+      String typeCode = action.getGeoObjectTypeCode();
       
       Optional<GeoObjectType> op = ServiceFactory.getAdapter().getMetadataCache().getGeoObjectType(typeCode);
   
@@ -147,85 +141,26 @@ public class ActionJsonAdapters
       
       object.add("geoObjectType", got.toJSON());
     }
-  }
+  } 
   
-  public static class CreateGeoObjectActionSerializer extends GeoObjectActionSerializer implements JsonSerializer<CreateGeoObjectAction>
+  public static class GeoObjectActionSerializer extends AbstractGeoObjectActionSerializer implements JsonSerializer<GeoObjectAction> {}
+  
+  public static class CreateGeoObjectActionSerializer extends AbstractGeoObjectActionSerializer implements JsonSerializer<CreateGeoObjectAction>
   {
-    @Override
     public JsonElement serialize(CreateGeoObjectAction action, Type typeOfSrc, JsonSerializationContext context)
     {
-      return super.serialize(action, typeOfSrc, context);
+      JsonObject jo = super.serialize(action, typeOfSrc, context).getAsJsonObject();
+      
+      jo.add(CreateGeoObjectAction.GEOOBJECTJSON, this.getGeoObjectJson(action));
+      jo.addProperty(CreateGeoObjectAction.HIERARCHYJSON, action.getHierarchyJson());
+      jo.addProperty(CreateGeoObjectAction.HIERARCHYCODE, action.getHierarchyCode());
+      
+      return jo;
     }
 
-    @Override
-    JsonObject getGeoObjectJson(AbstractAction action)
+    private JsonObject getGeoObjectJson(AbstractAction action)
     {
       return JsonParser.parseString(((CreateGeoObjectAction)action).getGeoObjectJson()).getAsJsonObject();
     }
   }
-  
-  public static class UpdateGeoObjectActionSerializer extends GeoObjectActionSerializer implements JsonSerializer<UpdateGeoObjectAction>
-  {
-    @Override
-    public JsonElement serialize(UpdateGeoObjectAction action, Type typeOfSrc, JsonSerializationContext context)
-    {
-      return super.serialize(action, typeOfSrc, context);
-    }
-
-    @Override
-    JsonObject getGeoObjectJson(AbstractAction action)
-    {
-      return JsonParser.parseString(((UpdateGeoObjectAction)action).getGeoObjectJson()).getAsJsonObject();
-    }
-  }
-  
-  public static class SetParentActionSerializer extends AbstractActionSerializer implements JsonSerializer<SetParentAction>
-  {
-    @Override
-    public JsonElement serialize(SetParentAction action, Type typeOfSrc, JsonSerializationContext context)
-    {
-      JsonObject jo = super.serialize(action, typeOfSrc, context).getAsJsonObject();
-      
-      jo.add(SetParentAction.JSON, JsonParser.parseString(action.getJson()));
-      jo.addProperty(SetParentAction.CHILDTYPECODE, action.getChildTypeCode());
-      jo.addProperty(SetParentAction.CHILDCODE, action.getChildCode());
-      
-      return jo;
-    }
-  }
-  
-  public static class RemoveChildActionSerializer extends AbstractActionSerializer implements JsonSerializer<RemoveChildAction>
-  {
-    @Override
-    public JsonElement serialize(RemoveChildAction action, Type typeOfSrc, JsonSerializationContext context)
-    {
-      JsonObject jo = super.serialize(action, typeOfSrc, context).getAsJsonObject();
-      
-      jo.addProperty(RemoveChildAction.CHILDID, action.getChildId());
-      jo.addProperty(RemoveChildAction.CHILDTYPECODE, action.getChildTypeCode());
-      jo.addProperty(RemoveChildAction.PARENTID, action.getParentId());
-      jo.addProperty(RemoveChildAction.PARENTTYPECODE, action.getParentTypeCode());
-      jo.addProperty(RemoveChildAction.HIERARCHYTYPECODE, action.getHierarchyTypeCode());
-      
-      return jo;
-    }
-  }
-  
-  public static class AddChildActionSerializer extends AbstractActionSerializer implements JsonSerializer<AddChildAction>
-  {
-    @Override
-    public JsonElement serialize(AddChildAction action, Type typeOfSrc, JsonSerializationContext context)
-    {
-      JsonObject jo = super.serialize(action, typeOfSrc, context).getAsJsonObject();
-      
-      jo.addProperty(AddChildAction.CHILDID, action.getChildId());
-      jo.addProperty(AddChildAction.CHILDTYPECODE, action.getChildTypeCode());
-      jo.addProperty(AddChildAction.PARENTID, action.getParentId());
-      jo.addProperty(AddChildAction.PARENTTYPECODE, action.getParentTypeCode());
-      jo.addProperty(AddChildAction.HIERARCHYTYPECODE, action.getHierarchyTypeCode());
-      
-      return jo;
-    }
-  }
-
 }
