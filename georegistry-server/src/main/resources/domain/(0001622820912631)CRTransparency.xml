@@ -24,15 +24,15 @@
           <text name="hierarchyCode" label="hierarchyCode" required="false" />
         </attributes>
       </mdBusiness>
-      <mdBusiness name="net.geoprism.registry.action.geoobject.AttributeAction" label="AttributeAction" exported="false">
+      <mdBusiness name="net.geoprism.registry.action.geoobject.AttributeAction" label="AttributeAction" exported="false" extends="net.geoprism.registry.action.AbstractAction">
         <attributes>
           <text name="attributeName" label="attributeName" required="true" />
           <text name="value" label="value" required="false" />
         </attributes>
       </mdBusiness>
-      <mdRelationship name="net.geoprism.registry.action.HasAttributeActionRelationship" label="Has Attribute Action Relationship" generateController="false" exported="false" publish="false">
-        <parent cardinality="1" name="net.geoprism.registry.action.geoobject.GeoObjectAction" method="GeoObject" />
-        <child cardinality="*" name="net.geoprism.registry.action.geoobject.AttributeAction" method="AttributeAction" />
+      <mdRelationship name="net.geoprism.registry.action.ActionHasActionRelationship" label="Action Has Action Relationship" generateController="false" exported="false" publish="false">
+        <parent cardinality="1" name="net.geoprism.registry.action.AbstractAction" method="ParentAction" />
+        <child cardinality="*" name="net.geoprism.registry.action.AbstractAction" method="ChildAction" />
       </mdRelationship>
       <mdBusiness name="net.geoprism.registry.action.geoobject.ValueOverTimeAttributeAction" label="ValueOverTimeAttributeAction" exported="false" extends="net.geoprism.registry.action.geoobject.AttributeAction">
         <attributes>
@@ -65,7 +65,7 @@
           <mdRelationshipPermission type="net.geoprism.registry.action.geoobject.AttributeAction">
             <operation name="ALL" />
           </mdRelationshipPermission>
-          <mdBusinessPermission type="net.geoprism.registry.action.HasAttributeActionRelationship">
+          <mdBusinessPermission type="net.geoprism.registry.action.ActionHasActionRelationship">
             <operation name="ALL" />
           </mdBusinessPermission>
           <mdBusinessPermission type="net.geoprism.registry.action.geoobject.ValueOverTimeAttributeAction">
@@ -87,7 +87,7 @@
           <mdRelationshipPermission type="net.geoprism.registry.action.geoobject.AttributeAction">
             <operation name="ALL" />
           </mdRelationshipPermission>
-          <mdBusinessPermission type="net.geoprism.registry.action.HasAttributeActionRelationship">
+          <mdBusinessPermission type="net.geoprism.registry.action.ActionHasActionRelationship">
             <operation name="ALL" />
           </mdBusinessPermission>
           <mdBusinessPermission type="net.geoprism.registry.action.geoobject.ValueOverTimeAttributeAction">
@@ -109,7 +109,7 @@
           <mdRelationshipPermission type="net.geoprism.registry.action.geoobject.AttributeAction">
             <operation name="ALL" />
           </mdRelationshipPermission>
-          <mdBusinessPermission type="net.geoprism.registry.action.HasAttributeActionRelationship">
+          <mdBusinessPermission type="net.geoprism.registry.action.ActionHasActionRelationship">
             <operation name="ALL" />
           </mdBusinessPermission>
           <mdBusinessPermission type="net.geoprism.registry.action.geoobject.ValueOverTimeAttributeAction">

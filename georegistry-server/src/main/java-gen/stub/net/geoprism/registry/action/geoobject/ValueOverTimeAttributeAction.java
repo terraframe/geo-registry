@@ -1,12 +1,15 @@
 package net.geoprism.registry.action.geoobject;
 
-import org.commongeoregistry.adapter.dataaccess.GeoObjectOverTime;
-import org.commongeoregistry.adapter.dataaccess.ValueOverTimeCollectionDTO;
+import java.util.Date;
+
 import org.commongeoregistry.adapter.dataaccess.ValueOverTimeDTO;
 
 import com.runwaysdk.dataaccess.ProgrammingErrorException;
+import com.runwaysdk.dataaccess.graph.attributes.ValueOverTime;
+import com.runwaysdk.dataaccess.graph.attributes.ValueOverTimeCollection;
 
 import net.geoprism.registry.action.StaleChangeRequestException;
+import net.geoprism.registry.model.graph.VertexServerGeoObject;
 
 public class ValueOverTimeAttributeAction extends ValueOverTimeAttributeActionBase
 {
@@ -17,13 +20,14 @@ public class ValueOverTimeAttributeAction extends ValueOverTimeAttributeActionBa
     super();
   }
   
-  public void execute(GeoObjectOverTime goTime)
+  @Override
+  public void execute(VertexServerGeoObject go)
   {
     String votAction = this.getAction();
     
-    final ValueOverTimeCollectionDTO votc = goTime.getAllValues(this.getAttributeName());
+    final ValueOverTimeCollection votc = go.getValuesOverTime(this.getAttributeName());
     
-    final ValueOverTimeDTO vot = votc.getAtStartDate(this.getOldStartDate());
+    final ValueOverTime vot = getAtStartDate(votc, this.getOldStartDate());
     
     if (votAction.equals("CREATE"))
     {
@@ -32,7 +36,7 @@ public class ValueOverTimeAttributeAction extends ValueOverTimeAttributeActionBa
         throw new StaleChangeRequestException();
       }
       
-      goTime.setValue(this.getAttributeName(), this.getValue(), this.getNewStartDate(), this.getNewEndDate());
+      go.setValue(this.getAttributeName(), this.getValue(), this.getNewStartDate(), this.getNewEndDate());
     }
     else if (votAction.equals("DELETE"))
     {
@@ -70,5 +74,20 @@ public class ValueOverTimeAttributeAction extends ValueOverTimeAttributeActionBa
     {
       throw new ProgrammingErrorException("Unexpected action " + votAction);
     }
+  }
+  
+  protected ValueOverTime getAtStartDate(ValueOverTimeCollection votc, Date date)
+  {
+    Date localDate = ValueOverTimeDTO.toLocal(date);
+    
+    for (ValueOverTime vot : votc)
+    {
+      if (vot.getStartDate().equals(localDate))
+      {
+        return vot;
+      }
+    }
+    
+    return null;
   }
 }

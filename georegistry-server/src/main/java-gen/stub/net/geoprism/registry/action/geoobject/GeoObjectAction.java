@@ -1,16 +1,16 @@
 package net.geoprism.registry.action.geoobject;
 
-import org.commongeoregistry.adapter.dataaccess.GeoObjectOverTime;
-
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.runwaysdk.query.OIterator;
 import com.runwaysdk.session.Session;
 
 import net.geoprism.localization.LocalizationFacade;
+import net.geoprism.registry.action.AbstractAction;
 import net.geoprism.registry.action.ActionJsonAdapters;
-import net.geoprism.registry.geoobject.ServerGeoObjectService;
+import net.geoprism.registry.conversion.VertexGeoObjectStrategy;
 import net.geoprism.registry.model.ServerGeoObjectType;
+import net.geoprism.registry.model.graph.VertexServerGeoObject;
 import net.geoprism.registry.service.ServiceFactory;
 
 public class GeoObjectAction extends GeoObjectActionBase
@@ -31,17 +31,21 @@ public class GeoObjectAction extends GeoObjectActionBase
   @Override
   public void execute()
   {
-    GeoObjectOverTime goTime = ServiceFactory.getRegistryService().getGeoObjectOverTimeByCode(Session.getCurrentSession().getOid(), this.getGeoObjectCode(), this.getGeoObjectTypeCode());
+    ServerGeoObjectType type = ServerGeoObjectType.get(this.getGeoObjectTypeCode());
+    VertexGeoObjectStrategy strategy = new VertexGeoObjectStrategy(type);
+    VertexServerGeoObject go = strategy.getGeoObjectByCode(this.getGeoObjectCode());
 
-    OIterator<? extends AttributeAction> it = this.getAllAttributeAction();
+    OIterator<? extends AbstractAction> it = this.getAllChildAction();
     
-    for (AttributeAction action : it)
+    for (AbstractAction action : it)
     {
-      action.execute(goTime);
+      if (action instanceof AttributeAction)
+      {
+        ((AttributeAction)action).execute(go);
+      }
     }
     
-    ServerGeoObjectService builder = new ServerGeoObjectService();
-    builder.apply(goTime, false, false);
+    go.apply(false);
   }
 
   @Override
@@ -51,7 +55,7 @@ public class GeoObjectAction extends GeoObjectActionBase
   }
 
   @Override
-  protected String getMessage()
+  public String getMessage()
   {
     ServerGeoObjectType got = ServiceFactory.getMetadataCache().getGeoObjectType(this.getGeoObjectTypeCode()).get();
 

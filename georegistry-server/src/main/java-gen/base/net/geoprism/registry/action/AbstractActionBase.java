@@ -1,24 +1,6 @@
-/**
- * Copyright (c) 2019 TerraFrame, Inc. All rights reserved.
- *
- * This file is part of Geoprism Registry(tm).
- *
- * Geoprism Registry(tm) is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation, either version 3 of the
- * License, or (at your option) any later version.
- *
- * Geoprism Registry(tm) is distributed in the hope that it will be useful, but
- * WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with Geoprism Registry(tm).  If not, see <http://www.gnu.org/licenses/>.
- */
 package net.geoprism.registry.action;
 
-@com.runwaysdk.business.ClassSignature(hash = 1066881005)
+@com.runwaysdk.business.ClassSignature(hash = 1910958193)
 /**
  * This class is generated automatically.
  * DO NOT MAKE CHANGES TO IT - THEY WILL BE OVERWRITTEN
@@ -48,7 +30,7 @@ public abstract class AbstractActionBase extends com.runwaysdk.business.Business
   public static java.lang.String SEQ = "seq";
   public static java.lang.String SITEMASTER = "siteMaster";
   public static java.lang.String TYPE = "type";
-  private static final long serialVersionUID = 1066881005;
+  private static final long serialVersionUID = 1910958193;
   
   public AbstractActionBase()
   {
@@ -602,6 +584,34 @@ public abstract class AbstractActionBase extends com.runwaysdk.business.Business
     return CLASS;
   }
   
+  public net.geoprism.registry.action.ActionHasActionRelationship addChildAction(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    return (net.geoprism.registry.action.ActionHasActionRelationship) addChild(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  public void removeChildAction(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    removeAllChildren(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.AbstractAction> getAllChildAction()
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.AbstractAction>) getChildren(net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship> getAllChildActionRel()
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship>) getChildRelationships(net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship> getChildActionRel(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship>) getRelationshipsWithChild(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
   public net.geoprism.registry.action.ActionHasDocument addDocument(com.runwaysdk.system.VaultFile vaultFile)
   {
     return (net.geoprism.registry.action.ActionHasDocument) addChild(vaultFile, net.geoprism.registry.action.ActionHasDocument.CLASS);
@@ -628,6 +638,34 @@ public abstract class AbstractActionBase extends com.runwaysdk.business.Business
   public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasDocument> getDocumentRel(com.runwaysdk.system.VaultFile vaultFile)
   {
     return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasDocument>) getRelationshipsWithChild(vaultFile, net.geoprism.registry.action.ActionHasDocument.CLASS);
+  }
+  
+  public net.geoprism.registry.action.ActionHasActionRelationship addParentAction(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    return (net.geoprism.registry.action.ActionHasActionRelationship) addParent(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  public void removeParentAction(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    removeAllParents(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.AbstractAction> getAllParentAction()
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.AbstractAction>) getParents(net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship> getAllParentActionRel()
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship>) getParentRelationships(net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
+  }
+  
+  @SuppressWarnings("unchecked")
+  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship> getParentActionRel(net.geoprism.registry.action.AbstractAction abstractAction)
+  {
+    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.ActionHasActionRelationship>) getRelationshipsWithParent(abstractAction, net.geoprism.registry.action.ActionHasActionRelationship.CLASS);
   }
   
   public net.geoprism.registry.action.HasActionRelationship addRequest(net.geoprism.registry.action.ChangeRequest changeRequest)

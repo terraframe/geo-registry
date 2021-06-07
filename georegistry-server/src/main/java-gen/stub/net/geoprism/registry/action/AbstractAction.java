@@ -54,7 +54,7 @@ public abstract class AbstractAction extends AbstractActionBase implements Gover
     return this.getApprovalStatus().get(0);
   }
   
-  protected abstract String getMessage();
+  public abstract String getMessage();
 
   public AbstractAction(RegistryService registry)
   {

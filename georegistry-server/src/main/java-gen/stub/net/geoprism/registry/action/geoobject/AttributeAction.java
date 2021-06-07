@@ -1,6 +1,9 @@
 package net.geoprism.registry.action.geoobject;
 
-import org.commongeoregistry.adapter.dataaccess.GeoObjectOverTime;
+import com.google.gson.JsonObject;
+
+import net.geoprism.registry.model.ServerGeoObjectType;
+import net.geoprism.registry.model.graph.VertexServerGeoObject;
 
 public class AttributeAction extends AttributeActionBase
 {
@@ -11,8 +14,45 @@ public class AttributeAction extends AttributeActionBase
     super();
   }
 
-  public void execute(GeoObjectOverTime goTime)
+  public void execute(VertexServerGeoObject go)
   {
-    goTime.setValue(this.getAttributeName(), this.getValue());
+    go.setValue(this.getAttributeName(), this.getValue());
+  }
+
+  @Override
+  public String getOrganizationCode()
+  {
+    return this.getAllParentAction().getAll().get(0).getOrganizationCode();
+  }
+
+  @Override
+  public String getGeoObjectTypeCode()
+  {
+    return this.getAllParentAction().getAll().get(0).getGeoObjectTypeCode();
+  }
+
+  @Override
+  public void execute()
+  {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean referencesType(ServerGeoObjectType type)
+  {
+    return this.getAllParentAction().getAll().get(0).referencesType(type);
+  }
+
+  @Override
+  public String getMessage()
+  {
+    return this.getAllParentAction().getAll().get(0).getMessage();
+  }
+
+  @Override
+  public JsonObject toJson()
+  {
+    // TODO Auto-generated method stub
+    return null;
   }
 }

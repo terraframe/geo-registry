@@ -1,6 +1,6 @@
 package net.geoprism.registry.action.geoobject;
 
-@com.runwaysdk.business.ClassSignature(hash = 1505618792)
+@com.runwaysdk.business.ClassSignature(hash = 1248961738)
 /**
  * This class is generated automatically.
  * DO NOT MAKE CHANGES TO IT - THEY WILL BE OVERWRITTEN
@@ -14,7 +14,7 @@ public abstract class GeoObjectActionBase extends net.geoprism.registry.action.A
   public static java.lang.String GEOOBJECTCODE = "geoObjectCode";
   public static java.lang.String GEOOBJECTTYPECODE = "geoObjectTypeCode";
   public static java.lang.String ORGANIZATIONCODE = "organizationCode";
-  private static final long serialVersionUID = 1505618792;
+  private static final long serialVersionUID = 1248961738;
   
   public GeoObjectActionBase()
   {
@@ -108,34 +108,6 @@ public abstract class GeoObjectActionBase extends net.geoprism.registry.action.A
   protected String getDeclaredType()
   {
     return CLASS;
-  }
-  
-  public net.geoprism.registry.action.HasAttributeActionRelationship addAttributeAction(net.geoprism.registry.action.geoobject.AttributeAction attributeAction)
-  {
-    return (net.geoprism.registry.action.HasAttributeActionRelationship) addChild(attributeAction, net.geoprism.registry.action.HasAttributeActionRelationship.CLASS);
-  }
-  
-  public void removeAttributeAction(net.geoprism.registry.action.geoobject.AttributeAction attributeAction)
-  {
-    removeAllChildren(attributeAction, net.geoprism.registry.action.HasAttributeActionRelationship.CLASS);
-  }
-  
-  @SuppressWarnings("unchecked")
-  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.geoobject.AttributeAction> getAllAttributeAction()
-  {
-    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.geoobject.AttributeAction>) getChildren(net.geoprism.registry.action.HasAttributeActionRelationship.CLASS);
-  }
-  
-  @SuppressWarnings("unchecked")
-  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.HasAttributeActionRelationship> getAllAttributeActionRel()
-  {
-    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.HasAttributeActionRelationship>) getChildRelationships(net.geoprism.registry.action.HasAttributeActionRelationship.CLASS);
-  }
-  
-  @SuppressWarnings("unchecked")
-  public com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.HasAttributeActionRelationship> getAttributeActionRel(net.geoprism.registry.action.geoobject.AttributeAction attributeAction)
-  {
-    return (com.runwaysdk.query.OIterator<? extends net.geoprism.registry.action.HasAttributeActionRelationship>) getRelationshipsWithChild(attributeAction, net.geoprism.registry.action.HasAttributeActionRelationship.CLASS);
   }
   
   public static GeoObjectAction get(String oid)
